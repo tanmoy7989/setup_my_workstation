@@ -1,0 +1,20 @@
+name: scienv
+channels:
+    - conda-forge
+    - anaconda
+dependencies:
+    - python=3.9
+    - numpy
+    - scipy
+    - scikit-learn
+    - tensorflow
+    - tensorflow-probability
+    - matplotlib
+    - dill
+    - pandas
+    - jupyter
+    - jupyter_contrib_nbextensions
+    - biopython
+    - tqdm
+    - joblib
+    - cmake
