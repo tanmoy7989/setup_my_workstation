@@ -42,7 +42,7 @@ Host github.com-tanmoy7989
 # github authorization: key exchange
 ssh-keygen -t rsa -b 4096 -q -f $HOME/.ssh/id_rsa -N ""
 cat $HOME/.ssh/id_rsa.pub
-echo -e "\nCopy this key over to Github using https://github.com/settings.ssh/new"
+echo -e "\nCopy this key over to Github using https://github.com/settings/ssh/new"
 echo "Press any key to continue"
 read
 
