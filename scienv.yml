@@ -3,6 +3,7 @@ channels:
     - conda-forge
     - anaconda
 dependencies:
+    # python is locked at 3.1 to be compatible with IMP's conda build
     - python=3.9
     - numpy
     - scipy
@@ -18,3 +19,5 @@ dependencies:
     - tqdm
     - joblib
     - cmake
+    - swig
+    - eigen
