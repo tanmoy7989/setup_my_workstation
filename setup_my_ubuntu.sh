@@ -15,9 +15,9 @@ SOFTWARE_DOWNLOAD_PATH=$HOME/mysoftware
 mkdir -p $SOFTWARE_DOWNLOAD_PATH
 
 # miniconda
-MINICONDA_SRC_PATH=$SOFTWARE_DOWNLOAD_PATH/Miniconda3-latest-MacOSX-x86_64.sh
+MINICONDA_SRC_PATH=$SOFTWARE_DOWNLOAD_PATH/Miniconda3-latest-Linux-x86_64.sh
 MINICONDA_INSTALL_PATH=$HOME/miniconda3
-curl -o $MINICONDA_SRC_PATH https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+curl -o $MINICONDA_SRC_PATH https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash $MINICONDA_SRC_PATH -b -p $MINICONDA_INSTALL_PATH
 echo -e "#conda\nsource $MINICONDA_INSTALL_PATH/etc/profile.d/conda.sh" >> $HOME/.bashrc
 echo "conda activate" >> $HOME/.bashrc
