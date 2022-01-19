@@ -8,7 +8,7 @@
 # Tanmoy Sanyal
 
 # bashrc
-cp bashrc $HOME/.bashrc
+cp bashrc $HOME/.bashrc_linux
 
 # set path for downloading softwares
 SOFTWARE_DOWNLOAD_PATH=$HOME/mysoftware

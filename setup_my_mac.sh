@@ -7,7 +7,7 @@
 # Tanmoy Sanyal
 
 # bashrc
-cp bashrc $HOME/.bashrc
+cp bashrc $HOME/.bashrc_macos
 # hide pesky zsh message (zsh is now the default shell, but long time bash # user here)
 echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> $HOME/.bash_profile
 
