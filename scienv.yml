@@ -8,8 +8,6 @@ dependencies:
     - numpy
     - scipy
     - scikit-learn
-    - tensorflow
-    - tensorflow-probability
     - matplotlib
     - dill
     - pandas
@@ -21,3 +19,9 @@ dependencies:
     - cmake
     - swig
     - eigen
+    - pip
+    - pip:
+      - networkx
+      - tensorflow
+      - tensorflow-probability
+      - git+https://github.com/master/tensorflow-riemopt.git
