@@ -4,15 +4,13 @@ channels:
     - anaconda
 dependencies:
     # python is locked at 3.1 to be compatible with IMP's conda build
-    - python=3.9
+    - python==3.9
     - numpy
     - scipy
     - scikit-learn
     - matplotlib
     - dill
     - pandas
-    - jupyter
-    - jupyter_contrib_nbextensions
     - biopython
     - tqdm
     - joblib
@@ -22,6 +20,6 @@ dependencies:
     - pip
     - pip:
       - networkx
-      - tensorflow
-      - tensorflow-probability
+      - tensorflow==2.11.0
+      - tensorflow-probability==0.19.0
       - git+https://github.com/master/tensorflow-riemopt.git
