@@ -1,3 +1,8 @@
+#!/bin/bash
+# This bashrc file is mostly useful for running on remote servers.
+# Tanmoy Sanyal
+#
+#
 # default stuff
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -60,6 +65,4 @@ extract () {
 # aliases
 alias ls='ls --color=auto -X -ohFrt'
 alias rm='rm -i'
-alias bashedit='vim $HOME/.bashrc'
-alias vimedit='vim $HOME/.vimrc'
 

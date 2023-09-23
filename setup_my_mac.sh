@@ -2,9 +2,14 @@
 # This script assumes the following:
 # - you have root access to the macbook you are trying to set up.
 # - the OS version is Big Sur or higher.
-# - <others>
 
 # Tanmoy Sanyal
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # bashrc
 cp bashrc $HOME/.bashrc_macos
@@ -12,17 +17,18 @@ cp bashrc $HOME/.bashrc_macos
 echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> $HOME/.bash_profile
 
 # set path for downloading softwares
-SOFTWARE_DOWNLOAD_PATH=$HOME/mysoftware
-mkdir -p $SOFTWARE_DOWNLOAD_PATH
+SOFTW_PATH=$HOME/mysoftware
+mkdir -p $SOFTW_PATH
 
-# miniconda
-MINICONDA_SRC_PATH=$SOFTWARE_DOWNLOAD_PATH/Miniconda3-latest-MacOSX-x86_64.sh
+# download miniconda
+MINICONDA_SRC_PATH=$SOFTW_PATH/Miniconda3-latest-MacOSX-x86_64.sh
 MINICONDA_INSTALL_PATH=$HOME/miniconda3
 curl -o $MINICONDA_SRC_PATH https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash $MINICONDA_SRC_PATH -b -p $MINICONDA_INSTALL_PATH
-echo -e "#conda\nsource $MINICONDA_INSTALL_PATH/etc/profile.d/conda.sh" >> $HOME/.bashrc
-echo "conda activate" >> $HOME/.bashrc
-source $HOME/.bashrc
+
+# add miniconda to the shell
+source $MINICONDA_INSTALL_PATH/bin/activate
+conda init zsh
 
 # git (through command-line tools)
 xcode-select --install
@@ -36,7 +42,7 @@ echo """
 Host github.com-tanmoy7989
     Hostname github.com
     User git
-     IdentityFile $HOME/.ssh/id_rsa
+    IdentityFile $HOME/.ssh/id_rsa
 """ >> $HOME/.ssh/config
 
 # github authorization: key exchange
@@ -52,15 +58,6 @@ git clone git@github.com:VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 cp vimrc $HOME/.vim/vimrc
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 vim +PluginInstall +qall
-
-# python scientific stack
-conda env create --file scienv.yml
-
-# personal website (and web dev stack)
-# git clone git@github.com:tanmoy7989/tanmoy7989.github.io.git $HOME/my_website
-# CURR_DIR=$(pwd)
-# cd $HOME/my_website && bash setup.sh
-# cd $CURR_DIR
 
 # clear conda cache
 conda clean -y -t
