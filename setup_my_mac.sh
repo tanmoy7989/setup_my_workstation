@@ -30,6 +30,10 @@ bash $MINICONDA_SRC_PATH -b -p $MINICONDA_INSTALL_PATH
 source $MINICONDA_INSTALL_PATH/bin/activate
 conda init zsh
 
+# install mamba and add to shell
+conda install -c conda-forge mamba
+mamba init zsh
+
 # git (through command-line tools)
 xcode-select --install
 
